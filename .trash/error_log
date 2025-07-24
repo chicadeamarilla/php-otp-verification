@@ -1,0 +1,6 @@
+[31-May-2025 09:03:00 UTC] PHP Warning:  Undefined array key "username" in /home/bee/public_html/auth.php on line 7
+[31-May-2025 09:03:52 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'shei' for key 'username' in /home/bee/public_html/auth.php:19
+Stack trace:
+#0 /home/bee/public_html/auth.php(19): mysqli->query('INSERT INTO use...')
+#1 {main}
+  thrown in /home/bee/public_html/auth.php on line 19

@@ -1,0 +1,122 @@
+[28-Jun-2025 16:28:04 UTC] PHP Parse error:  syntax error, unexpected token "=" in /home/bee/public_html/index.php on line 131
+[28-Jun-2025 16:28:58 UTC] PHP Parse error:  syntax error, unexpected token "=" in /home/bee/public_html/index.php on line 131
+[28-Jun-2025 16:33:14 UTC] PHP Parse error:  syntax error, unexpected token "<" in /home/bee/public_html/index.php on line 131
+[28-Jun-2025 16:33:17 UTC] PHP Parse error:  syntax error, unexpected token "<" in /home/bee/public_html/index.php on line 131
+[28-Jun-2025 16:36:40 UTC] PHP Parse error:  Unclosed '{' on line 106 in /home/bee/public_html/index.php on line 175
+[28-Jun-2025 16:36:49 UTC] PHP Warning:  Undefined array key "rules" in /home/bee/public_html/auth.php on line 26
+[28-Jun-2025 16:36:49 UTC] PHP Deprecated:  setcookie(): Passing null to parameter #2 ($value) of type string is deprecated in /home/bee/public_html/auth.php on line 26
+[28-Jun-2025 16:36:49 UTC] PHP Parse error:  Unclosed '{' on line 106 in /home/bee/public_html/index.php on line 175
+[28-Jun-2025 17:06:42 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'breed_id' in 'where clause' in /home/bee/public_html/index.php:132
+Stack trace:
+#0 /home/bee/public_html/index.php(132): mysqli->query('SELECT * FROM b...')
+#1 {main}
+  thrown in /home/bee/public_html/index.php on line 132
+[28-Jun-2025 17:07:35 UTC] PHP Warning:  Array to string conversion in /home/bee/public_html/index.php on line 135
+[28-Jun-2025 17:07:36 UTC] PHP Warning:  Array to string conversion in /home/bee/public_html/index.php on line 135
+[28-Jun-2025 17:12:27 UTC] PHP Warning:  Undefined array key "username" in /home/bee/public_html/index.php on line 135
+[28-Jun-2025 17:12:27 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in /home/bee/public_html/index.php:136
+Stack trace:
+#0 /home/bee/public_html/index.php(136): mysqli->query('SELECT * FROM u...')
+#1 {main}
+  thrown in /home/bee/public_html/index.php on line 136
+[28-Jun-2025 17:14:30 UTC] PHP Warning:  Undefined array key "name" in /home/bee/public_html/index.php on line 137
+[30-Jun-2025 14:20:01 UTC] PHP Warning:  Undefined array key "rules" in /home/bee/public_html/auth.php on line 26
+[30-Jun-2025 14:20:01 UTC] PHP Deprecated:  setcookie(): Passing null to parameter #2 ($value) of type string is deprecated in /home/bee/public_html/auth.php on line 26
+[30-Jun-2025 14:37:45 UTC] PHP Warning:  Undefined array key "id" in /home/bee/public_html/index.php on line 131
+[30-Jun-2025 14:37:45 UTC] PHP Warning:  Undefined array key "description" in /home/bee/public_html/index.php on line 131
+[30-Jun-2025 14:37:45 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/bee/public_html/index.php on line 131
+[30-Jun-2025 14:38:32 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.name , breed.name as bname , users.username FROM jarden INNER JOIN  breed ON...' at line 1 in /home/bee/public_html/index.php:126
+Stack trace:
+#0 /home/bee/public_html/index.php(126): mysqli->query('SELECT id,descr...')
+#1 {main}
+  thrown in /home/bee/public_html/index.php on line 126
+[30-Jun-2025 14:39:10 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'id' in field list is ambiguous in /home/bee/public_html/index.php:126
+Stack trace:
+#0 /home/bee/public_html/index.php(126): mysqli->query('SELECT id,descr...')
+#1 {main}
+  thrown in /home/bee/public_html/index.php on line 126
+[30-Jun-2025 15:49:05 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/bee/public_html/index.php on line 131
+[30-Jun-2025 16:21:52 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/bee/public_html/delete.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/bee/public_html/delete.php on line 7
+[03-Jul-2025 14:05:52 UTC] PHP Warning:  Undefined array key "rules" in /home/bee/public_html/auth.php on line 26
+[03-Jul-2025 14:05:52 UTC] PHP Deprecated:  setcookie(): Passing null to parameter #2 ($value) of type string is deprecated in /home/bee/public_html/auth.php on line 26
+[03-Jul-2025 15:23:16 UTC] PHP Warning:  Undefined variable $breedo in /home/bee/public_html/saveJarden.php on line 25
+[03-Jul-2025 15:23:16 UTC] PHP Warning:  Undefined variable $breedo in /home/bee/public_html/saveJarden.php on line 25
+[03-Jul-2025 15:28:32 UTC] PHP Warning:  Undefined array key "id" in /home/bee/public_html/auth.php on line 26
+[03-Jul-2025 15:28:32 UTC] PHP Deprecated:  setcookie(): Passing null to parameter #2 ($value) of type string is deprecated in /home/bee/public_html/auth.php on line 26
+[03-Jul-2025 15:28:32 UTC] PHP Warning:  Undefined array key "rules" in /home/bee/public_html/auth.php on line 27
+[03-Jul-2025 15:28:32 UTC] PHP Deprecated:  setcookie(): Passing null to parameter #2 ($value) of type string is deprecated in /home/bee/public_html/auth.php on line 27
+[03-Jul-2025 15:29:33 UTC] PHP Warning:  Undefined array key "rules" in /home/bee/public_html/auth.php on line 27
+[03-Jul-2025 15:29:33 UTC] PHP Deprecated:  setcookie(): Passing null to parameter #2 ($value) of type string is deprecated in /home/bee/public_html/auth.php on line 27
+[03-Jul-2025 15:55:21 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'daisy' in 'field list' in /home/bee/public_html/saveJarden.php:11
+Stack trace:
+#0 /home/bee/public_html/saveJarden.php(11): mysqli->query('INSERT INTO `ja...')
+#1 {main}
+  thrown in /home/bee/public_html/saveJarden.php on line 11
+[03-Jul-2025 15:56:22 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'daisy' in 'field list' in /home/bee/public_html/saveJarden.php:11
+Stack trace:
+#0 /home/bee/public_html/saveJarden.php(11): mysqli->query('INSERT INTO `ja...')
+#1 {main}
+  thrown in /home/bee/public_html/saveJarden.php on line 11
+[03-Jul-2025 15:56:32 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'daisy' in 'field list' in /home/bee/public_html/saveJarden.php:11
+Stack trace:
+#0 /home/bee/public_html/saveJarden.php(11): mysqli->query('INSERT INTO `ja...')
+#1 {main}
+  thrown in /home/bee/public_html/saveJarden.php on line 11
+[03-Jul-2025 15:56:37 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'daisy' in 'field list' in /home/bee/public_html/saveJarden.php:11
+Stack trace:
+#0 /home/bee/public_html/saveJarden.php(11): mysqli->query('INSERT INTO `ja...')
+#1 {main}
+  thrown in /home/bee/public_html/saveJarden.php on line 11
+[03-Jul-2025 16:07:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function shell_exec() in /home/bee/public_html/saveJarden.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/bee/public_html/saveJarden.php on line 10
+[03-Jul-2025 16:08:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function shell_exec() in /home/bee/public_html/saveJarden.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/bee/public_html/saveJarden.php on line 10
+[03-Jul-2025 16:09:50 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'daisy' in 'field list' in /home/bee/public_html/saveJarden.php:11
+Stack trace:
+#0 /home/bee/public_html/saveJarden.php(11): mysqli->query('INSERT INTO `ja...')
+#1 {main}
+  thrown in /home/bee/public_html/saveJarden.php on line 11
+[05-Jul-2025 14:29:25 UTC] PHP Warning:  Undefined array key "rules" in /home/bee/public_html/auth.php on line 27
+[05-Jul-2025 14:29:25 UTC] PHP Deprecated:  setcookie(): Passing null to parameter #2 ($value) of type string is deprecated in /home/bee/public_html/auth.php on line 27
+[05-Jul-2025 14:53:53 UTC] PHP Warning:  Undefined array key "rules" in /home/bee/public_html/auth.php on line 27
+[05-Jul-2025 14:53:53 UTC] PHP Deprecated:  setcookie(): Passing null to parameter #2 ($value) of type string is deprecated in /home/bee/public_html/auth.php on line 27
+[05-Jul-2025 14:55:27 UTC] PHP Warning:  Undefined array key "rules" in /home/bee/public_html/auth.php on line 27
+[05-Jul-2025 14:55:27 UTC] PHP Deprecated:  setcookie(): Passing null to parameter #2 ($value) of type string is deprecated in /home/bee/public_html/auth.php on line 27
+[05-Jul-2025 14:56:43 UTC] PHP Warning:  Undefined array key "rules" in /home/bee/public_html/auth.php on line 27
+[05-Jul-2025 14:56:43 UTC] PHP Deprecated:  setcookie(): Passing null to parameter #2 ($value) of type string is deprecated in /home/bee/public_html/auth.php on line 27
+[05-Jul-2025 15:03:01 UTC] PHP Deprecated:  setcookie(): Passing null to parameter #2 ($value) of type string is deprecated in /home/bee/public_html/auth.php on line 27
+[05-Jul-2025 15:03:01 UTC] PHP Warning:  Undefined array key "rules" in /home/bee/public_html/index.php on line 133
+[05-Jul-2025 15:04:01 UTC] PHP Deprecated:  setcookie(): Passing null to parameter #2 ($value) of type string is deprecated in /home/bee/public_html/auth.php on line 27
+[05-Jul-2025 16:22:09 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'sheida' for key 'username' in /home/bee/public_html/auth.php:57
+Stack trace:
+#0 /home/bee/public_html/auth.php(57): mysqli->query('INSERT INTO use...')
+#1 {main}
+  thrown in /home/bee/public_html/auth.php on line 57
+[06-Jul-2025 17:40:55 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'sheida' for key 'username' in /home/bee/public_html/auth.php:57
+Stack trace:
+#0 /home/bee/public_html/auth.php(57): mysqli->query('INSERT INTO use...')
+#1 {main}
+  thrown in /home/bee/public_html/auth.php on line 57
+[09-Jul-2025 07:45:13 UTC] PHP Deprecated:  setcookie(): Passing null to parameter #2 ($value) of type string is deprecated in /home/bee/public_html/auth.php on line 27
+[10-Jul-2025 16:38:20 UTC] PHP Warning:  Undefined array key "id" in /home/bee/public_html/verify.php on line 8
+[10-Jul-2025 16:38:54 UTC] PHP Warning:  Undefined array key "id" in /home/bee/public_html/verify.php on line 11
+[10-Jul-2025 16:56:41 UTC] PHP Warning:  Undefined array key "otp" in /home/bee/public_html/verify.php on line 25
+[10-Jul-2025 16:58:32 UTC] PHP Warning:  Undefined array key "otp" in /home/bee/public_html/verify.php on line 25
+[10-Jul-2025 17:07:39 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/bee/public_html/verify.php:24
+Stack trace:
+#0 {main}
+  thrown in /home/bee/public_html/verify.php on line 24
+[10-Jul-2025 18:20:06 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '@gmail.com' at line 1 in /home/bee/public_html/forget.php:17
+Stack trace:
+#0 /home/bee/public_html/forget.php(17): mysqli->query('SELECT * FROM `...')
+#1 {main}
+  thrown in /home/bee/public_html/forget.php on line 17
+[23-Jul-2025 10:37:07 UTC] PHP Deprecated:  setcookie(): Passing null to parameter #2 ($value) of type string is deprecated in /home/bee/public_html/auth.php on line 27
+[24-Jul-2025 08:47:47 UTC] PHP Warning:  Undefined array key "username" in /home/bee/public_html/auth.php on line 13

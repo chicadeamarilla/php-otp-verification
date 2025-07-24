@@ -1,0 +1,45 @@
+<?php
+session_start();
+
+// Simulated user database (replace this with a real DB later)
+$users = [
+    "admin" => [
+        "password" => "password",
+        "status" => "active" // can also be 'inactive' or 'banned'
+    ],
+    "john" => [
+        "password" => "1234",
+        "status" => "inactive"
+    ]
+];
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = $_POST['username'] ?? '';
+    $password = $_POST['password'] ?? '';
+
+    if (isset($users[$username]) && $users[$username]['password'] === $password) {
+        $status = $users[$username]['status'];
+
+        if ($status !== "active") {
+            echo "Account status is '$status'. Access denied.";
+        } else {
+            $_SESSION['loggedin'] = true;
+            $_SESSION['username'] = $username;
+            header("Location: flower_form.php");
+            exit;
+        }
+    } else {
+        echo "Invalid username or password.";
+    }
+}
+?>
+
+<form method="post">
+    <label for="username">Username:</label><br>
+    <input type="text" name="username" required><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" name="password" required><br><br>
+
+    <input type="submit" value="Login">
+</form>
