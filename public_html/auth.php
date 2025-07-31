@@ -10,7 +10,7 @@ print_r($_POST);
 
 if($_GET['type']=='login'){
 
-$sql = "SELECT username, password,id,rules  FROM users where username='" . $_POST['username'] . "'";
+$sql = "SELECT username, password,id,rules  FROM users where Email='" . $_POST['username'] . "'";
 $result = $conn->query($sql);
 
 //print_r($result);
@@ -19,8 +19,12 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   // output data of each row
   while ($row = $result->fetch_assoc()) {
+      $encrypt_pass = md5($_POST['password']);
 
-    if ($row['password'] == $_POST['password']) {
+    //  echo $encrypt_pass." ".$row['password'];
+    //  exit(); 
+    if($row['password'] == $encrypt_pass ) {
+      
       echo "LOGIN OK";
       setcookie("beedata", $row['username'], time() + (86400 * 5), "/"); // Expires in 30 days
       setcookie("userid", $row['id'], time() + (86400 * 5), "/"); // Expires in 30 days
@@ -28,14 +32,14 @@ if ($result->num_rows > 0) {
       header("Location: https://bee.avishost.com");
       exit;
     } else {
-    header("Location: https://bee.avishost.com?msg=wrong data..");
+    header("Location: https://bee.avishost.com?msg=wrong data.8888.");
       exit;
       
     }
   }
   
 }else{
-     header("Location: https://bee.avishost.com?msg=wrong data..");
+     header("Location: https://bee.avishost.com?msg=no user found");
       exit;
 }
   
@@ -49,7 +53,8 @@ if ($result->num_rows > 0) {
 
   sendmail($_POST['email'],"Your verification code is: ", $otp);  
 
-  $sql = "INSERT INTO users (username, password,email,OTP) VALUES ('" . $_POST['username'] . "', '" . $_POST['password'] . "', '" . $_POST['email'] . "','".$otp."')";
+  $sql = "INSERT INTO users (username, password,email,OTP) VALUES ('" . $_POST['username'] . "', '" .md5( $_POST['password']) . "', '" . $_POST['email'] . "','".$otp."')";
+
 
 
  

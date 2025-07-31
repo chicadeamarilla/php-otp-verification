@@ -120,3 +120,118 @@ Stack trace:
   thrown in /home/bee/public_html/forget.php on line 17
 [23-Jul-2025 10:37:07 UTC] PHP Deprecated:  setcookie(): Passing null to parameter #2 ($value) of type string is deprecated in /home/bee/public_html/auth.php on line 27
 [24-Jul-2025 08:47:47 UTC] PHP Warning:  Undefined array key "username" in /home/bee/public_html/auth.php on line 13
+[24-Jul-2025 16:58:18 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '@gmail.com' at line 1 in /home/bee/public_html/forget.php:17
+Stack trace:
+#0 /home/bee/public_html/forget.php(17): mysqli->query('SELECT * FROM `...')
+#1 {main}
+  thrown in /home/bee/public_html/forget.php on line 17
+[24-Jul-2025 17:47:48 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`users`.`email`='sheidarajabi7@gmail.com'' at line 1 in /home/bee/public_html/forget.php:24
+Stack trace:
+#0 /home/bee/public_html/forget.php(24): mysqli->query('UPDATE `users` ...')
+#1 {main}
+  thrown in /home/bee/public_html/forget.php on line 24
+[24-Jul-2025 18:39:02 UTC] PHP Warning:  Undefined variable $conn in /home/bee/public_html/resetPassword.php on line 14
+[24-Jul-2025 18:39:02 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bee/public_html/resetPassword.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/bee/public_html/resetPassword.php on line 14
+[24-Jul-2025 18:39:11 UTC] PHP Warning:  Undefined variable $conn in /home/bee/public_html/resetPassword.php on line 14
+[24-Jul-2025 18:39:11 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bee/public_html/resetPassword.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/bee/public_html/resetPassword.php on line 14
+[24-Jul-2025 18:39:35 UTC] PHP Warning:  Undefined variable $conn in /home/bee/public_html/resetPassword.php on line 14
+[24-Jul-2025 18:39:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bee/public_html/resetPassword.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/bee/public_html/resetPassword.php on line 14
+[24-Jul-2025 18:40:05 UTC] PHP Warning:  Undefined variable $conn in /home/bee/public_html/resetPassword.php on line 14
+[24-Jul-2025 18:40:05 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bee/public_html/resetPassword.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/bee/public_html/resetPassword.php on line 14
+[24-Jul-2025 18:40:35 UTC] PHP Warning:  Undefined variable $conn in /home/bee/public_html/resetPassword.php on line 14
+[24-Jul-2025 18:40:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bee/public_html/resetPassword.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/bee/public_html/resetPassword.php on line 14
+[24-Jul-2025 18:43:49 UTC] PHP Fatal error:  Uncaught Error: Object of class mysqli_result could not be converted to string in /home/bee/public_html/resetPassword.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/bee/public_html/resetPassword.php on line 19
+[24-Jul-2025 19:38:11 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/bee/public_html/resetPassword.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/bee/public_html/resetPassword.php on line 18
+[24-Jul-2025 19:39:03 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/bee/public_html/resetPassword.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/bee/public_html/resetPassword.php on line 18
+[24-Jul-2025 19:39:05 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/bee/public_html/resetPassword.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/bee/public_html/resetPassword.php on line 18
+[24-Jul-2025 19:39:36 UTC] PHP Warning:  Undefined array key "otp" in /home/bee/public_html/resetPassword.php on line 20
+[24-Jul-2025 19:41:28 UTC] PHP Warning:  Undefined array key "otp" in /home/bee/public_html/resetPassword.php on line 21
+[24-Jul-2025 19:42:05 UTC] PHP Warning:  Undefined array key "otp" in /home/bee/public_html/resetPassword.php on line 22
+[24-Jul-2025 19:42:41 UTC] PHP Warning:  Undefined array key "otp" in /home/bee/public_html/resetPassword.php on line 22
+[24-Jul-2025 19:44:09 UTC] PHP Warning:  Undefined array key "otp" in /home/bee/public_html/resetPassword.php on line 16
+[24-Jul-2025 19:50:12 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/bee/public_html/resetPassword.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/bee/public_html/resetPassword.php on line 21
+[24-Jul-2025 19:51:23 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/bee/public_html/resetPassword.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/bee/public_html/resetPassword.php on line 21
+[24-Jul-2025 19:52:10 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/bee/public_html/resetPassword.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/bee/public_html/resetPassword.php on line 21
+[24-Jul-2025 19:52:11 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/bee/public_html/resetPassword.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/bee/public_html/resetPassword.php on line 21
+[24-Jul-2025 19:52:12 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/bee/public_html/resetPassword.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/bee/public_html/resetPassword.php on line 21
+[24-Jul-2025 19:52:30 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/bee/public_html/resetPassword.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/bee/public_html/resetPassword.php on line 21
+[29-Jul-2025 04:42:23 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mdf() in /home/bee/public_html/test.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/bee/public_html/test.php on line 13
+[29-Jul-2025 04:42:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mdf() in /home/bee/public_html/test.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/bee/public_html/test.php on line 13
+[29-Jul-2025 04:42:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mdf() in /home/bee/public_html/test.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/bee/public_html/test.php on line 13
+[29-Jul-2025 04:42:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mdf() in /home/bee/public_html/test.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/bee/public_html/test.php on line 13
+[29-Jul-2025 04:42:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mdf() in /home/bee/public_html/test.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/bee/public_html/test.php on line 15
+[29-Jul-2025 04:43:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mdf() in /home/bee/public_html/test.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/bee/public_html/test.php on line 15
+[29-Jul-2025 04:43:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mdf() in /home/bee/public_html/test.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/bee/public_html/test.php on line 15
+[29-Jul-2025 04:43:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mdf() in /home/bee/public_html/test.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/bee/public_html/test.php on line 15
+[31-Jul-2025 12:36:56 UTC] PHP Parse error:  syntax error, unexpected token "==" in /home/bee/public_html/auth.php on line 23
+[31-Jul-2025 12:36:59 UTC] PHP Parse error:  syntax error, unexpected token "==" in /home/bee/public_html/auth.php on line 23
+[31-Jul-2025 12:37:09 UTC] PHP Parse error:  syntax error, unexpected token "==" in /home/bee/public_html/auth.php on line 23
