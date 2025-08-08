@@ -1,0 +1,50 @@
+<?php
+
+namespace common\models;
+
+use Yii;
+
+/**
+ * This is the model class for table "airports".
+ *
+ * @property int $id
+ * @property string $iatacode
+ * @property string $name
+ */
+class AirPort extends \yii\db\ActiveRecord
+{
+
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function tableName()
+    {
+        return 'airports';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function rules()
+    {
+        return [
+            [['iatacode', 'name'], 'required'],
+            [['iatacode'], 'string', 'max' => 8],
+            [['name'], 'string', 'max' => 100],
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'iatacode' => 'Iatacode',
+            'name' => 'Name',
+        ];
+    }
+
+}
