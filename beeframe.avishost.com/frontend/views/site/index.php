@@ -55,9 +55,8 @@ if (isset($_POST['origin']) and isset($_POST['destination']) and isset($_POST['d
 
 
   $result = json_decode($response);
-  //echo $result->access_token;
 
-
+  
 
 
 
@@ -99,7 +98,7 @@ if (isset($_POST['origin']) and isset($_POST['destination']) and isset($_POST['d
     "GDS"
   ],
   "searchCriteria": {
-    "maxFlightOffers": 4,
+    "maxFlightOffers": 100,
     "flightFilters": {
       "cabinRestrictions": [
         {
@@ -153,6 +152,12 @@ if (isset($_POST['origin']) and isset($_POST['destination']) and isset($_POST['d
 
           <div class="col-lg-4">
             <?php foreach ($flight->itineraries[0]->segments as $segment) {
+
+
+
+
+
+
 
               if ($segment->carrierCode) {
 
@@ -217,8 +222,13 @@ if (isset($_POST['origin']) and isset($_POST['destination']) and isset($_POST['d
 //print_r($php_resultAirline->dat);
         
 
-              echo $segment->departure->iataCode . "--->";
-              echo $segment->arrival->iataCode . "(" . $airline . ")";
+$departure_name = AirPort::findOne(['code'=>$segment->departure->iataCode]);
+$arrival_name = AirPort::findOne(['code'=>$segment->arrival->iataCode]);
+
+
+
+              echo $segment->departure->iataCode."-".$departure_name->name." ".$departure_name->cityName.  "--->";
+              echo $segment->arrival->iataCode."-".$arrival_name->name." ".$arrival_name->cityName."(" . $airline . ")";
 
               ?>
               <h2><?php ?></h2>
