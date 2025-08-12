@@ -75,11 +75,12 @@ curl_close($curl);
     print_r($hotel->name);
     echo "<hr>";
   }
-
+ foreach($php_result->data as $hotel){
+    print_r($hotel->iataCode);
+    echo "<br>";
+  }
  foreach ($php_result->data as $hotel) {
     if (isset($hotel->address->cityname)) {
-        echo $hotel->address->cityname;
-    } else {
         echo "No city name";
     }
     echo "<hr>";
