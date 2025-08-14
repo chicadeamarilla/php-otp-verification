@@ -50,7 +50,11 @@ if (isset($_POST['origin']) and isset($_POST['destination']) and isset($_POST['d
   $response = curl_exec($curl);
 
   curl_close($curl);
+<<<<<<< Updated upstream
+
+=======
   //echo $response;
+>>>>>>> Stashed changes
 
 
 
@@ -145,9 +149,179 @@ if (isset($_POST['origin']) and isset($_POST['destination']) and isset($_POST['d
 
 
         <?php
+<<<<<<< Updated upstream
+    
+    //print_r($php_result->data);
+    //exit();
         foreach ($php_result->data as $flight) {
 
 
+$travelres = '
+      {
+        "id": "1",
+        "dateOfBirth": "1982-01-16",
+        "name": {
+          "firstName": "JORGE",
+          "lastName": "GONZALES"
+        },
+        "gender": "MALE",
+        "contact": {
+          "emailAddress": "jorge.gonzales833@telefonica.es",
+          "phones": [
+            {
+              "deviceType": "MOBILE",
+              "countryCallingCode": "34",
+              "number": "480080076"
+            }
+          ]
+        },
+        "documents": [
+          {
+            "documentType": "PASSPORT",
+            "birthPlace": "Madrid",
+            "issuanceLocation": "Madrid",
+            "issuanceDate": "2015-04-14",
+            "number": "00000000",
+            "expiryDate": "2025-04-14",
+            "issuanceCountry": "ES",
+            "validityCountry": "ES",
+            "nationality": "ES",
+            "holder": true
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "dateOfBirth": "2012-10-11",
+        "gender": "FEMALE",
+        "contact": {
+          "emailAddress": "jorge.gonzales833@telefonica.es",
+          "phones": [
+            {
+              "deviceType": "MOBILE",
+              "countryCallingCode": "34",
+              "number": "480080076"
+            }
+          ]
+        },
+        "name": {
+          "firstName": "ADRIANA",
+          "lastName": "GONZALES"
+        }
+      }
+        ';
+
+   // $travelres = json_decode($travelres);
+
+    //print_r($travelres); 
+
+
+$new_order = ['data'=>['type'=>"flight-order","flightOffers"=>[$flight]]];
+
+$newBlock = [
+    "travelers" => [
+        [
+            "id" => "1",
+            "dateOfBirth" => "1982-01-16",
+            "name" => [
+                "firstName" => "JORGE",
+                "lastName" => "GONZALES"
+            ],
+            "gender" => "MALE",
+            "contact" => [
+                "emailAddress" => "jorge.gonzales833@telefonica.es",
+                "phones" => [
+                    [
+                        "deviceType" => "MOBILE",
+                        "countryCallingCode" => "34",
+                        "number" => "480080076"
+                    ]
+                ]
+            ],
+            "documents" => [
+                [
+                    "documentType" => "PASSPORT",
+                    "birthPlace" => "Madrid",
+                    "issuanceLocation" => "Madrid",
+                    "issuanceDate" => "2025-04-14",
+                    "number" => "00000000",
+                    "expiryDate" => "2035-04-14",
+                    "issuanceCountry" => "ES",
+                    "validityCountry" => "ES",
+                    "nationality" => "ES",
+                    "holder" => true
+                ]
+            ]
+        ],
+        
+    ],
+    "remarks" => [
+        "general" => [
+            [
+                "subType" => "GENERAL_MISCELLANEOUS",
+                "text" => "ONLINE BOOKING FROM INCREIBLE VIAJES"
+            ]
+        ]
+    ],
+    "ticketingAgreement" => [
+        "option" => "DELAY_TO_CANCEL",
+        "delay" => "6D"
+    ],
+    "contacts" => [
+        [
+            "addresseeName" => [
+                "firstName" => "PABLO",
+                "lastName" => "RODRIGUEZ"
+            ],
+            "companyName" => "INCREIBLE VIAJES",
+            "purpose" => "STANDARD",
+            "phones" => [
+                [
+                    "deviceType" => "LANDLINE",
+                    "countryCallingCode" => "34",
+                    "number" => "480080071"
+                ],
+                [
+                    "deviceType" => "MOBILE",
+                    "countryCallingCode" => "33",
+                    "number" => "480080072"
+                ]
+            ],
+            "emailAddress" => "support@increibleviajes.es",
+            "address" => [
+                "lines" => ["Calle Prado, 16"],
+                "postalCode" => "28014",
+                "cityName" => "Madrid",
+                "countryCode" => "ES"
+            ]
+        ]
+    ]
+];
+
+// Rebuild data with new block inserted after "flightOffers"
+$newData = [];
+foreach ($new_order['data'] as $key => $value) {
+    $newData[$key] = $value;
+    if ($key === 'flightOffers') {
+        foreach ($newBlock as $bKey => $bValue) {
+            $newData[$bKey] = $bValue;
+        }
+    }
+}
+
+$new_order['data'] = $newData;
+
+// Output pretty JSON
+$finalJson = json_encode($new_order);
+//echo $finalJson;
+
+
+
+=======
+        foreach ($php_result->data as $flight) {
+
+
+>>>>>>> Stashed changes
           ?>
 
           <div class="col-lg-4">
@@ -199,7 +373,15 @@ if (isset($_POST['origin']) and isset($_POST['destination']) and isset($_POST['d
                     $new_airline = new Airline();
                     $new_airline->iatacode = $segment->carrierCode;
                     $new_airline->business_name = $airline;
+<<<<<<< Updated upstream
+                    if(!$new_airline->save()){
+                      print_r($new_airline->getErros());
+                    }else{
+                      echo "save new one<br>";
+                    }
+=======
                     $new_airline->save();
+>>>>>>> Stashed changes
 
                   } else {
                     $airline = "---";
@@ -227,9 +409,19 @@ $arrival_name = AirPort::findOne(['code'=>$segment->arrival->iataCode]);
 
 
 
+<<<<<<< Updated upstream
+              if($departure_name)
+              echo $segment->departure->iataCode."-".$departure_name->name." ".$departure_name->cityName.  "--->";
+              if($arrival_name){
+              echo $segment->arrival->iataCode."-".$arrival_name->name." ".$arrival_name->cityName."(" . $airline . ")";
+              }else{
+                echo "no arrival_name found  on : ".$segment->arrival->iataCode."<br>";
+              }
+=======
               echo $segment->departure->iataCode."-".$departure_name->name." ".$departure_name->cityName.  "--->";
               echo $segment->arrival->iataCode."-".$arrival_name->name." ".$arrival_name->cityName."(" . $airline . ")";
 
+>>>>>>> Stashed changes
               ?>
               <h2><?php ?></h2>
               <?php
@@ -249,6 +441,13 @@ $arrival_name = AirPort::findOne(['code'=>$segment->arrival->iataCode]);
                 ?>
               </a></p>
 
+<<<<<<< Updated upstream
+              <p><a class="btn btn-outline-secondary">
+                ORDER NOW
+              </a></p>
+
+=======
+>>>>>>> Stashed changes
 
           </div>
 
