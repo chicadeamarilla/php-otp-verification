@@ -50,11 +50,7 @@ if (isset($_POST['origin']) and isset($_POST['destination']) and isset($_POST['d
   $response = curl_exec($curl);
 
   curl_close($curl);
-<<<<<<< Updated upstream
 
-=======
-  //echo $response;
->>>>>>> Stashed changes
 
 
 
@@ -149,7 +145,6 @@ if (isset($_POST['origin']) and isset($_POST['destination']) and isset($_POST['d
 
 
         <?php
-<<<<<<< Updated upstream
     
     //print_r($php_result->data);
     //exit();
@@ -317,11 +312,6 @@ $finalJson = json_encode($new_order);
 
 
 
-=======
-        foreach ($php_result->data as $flight) {
-
-
->>>>>>> Stashed changes
           ?>
 
           <div class="col-lg-4">
@@ -373,15 +363,11 @@ $finalJson = json_encode($new_order);
                     $new_airline = new Airline();
                     $new_airline->iatacode = $segment->carrierCode;
                     $new_airline->business_name = $airline;
-<<<<<<< Updated upstream
                     if(!$new_airline->save()){
                       print_r($new_airline->getErros());
                     }else{
                       echo "save new one<br>";
                     }
-=======
-                    $new_airline->save();
->>>>>>> Stashed changes
 
                   } else {
                     $airline = "---";
@@ -409,7 +395,6 @@ $arrival_name = AirPort::findOne(['code'=>$segment->arrival->iataCode]);
 
 
 
-<<<<<<< Updated upstream
               if($departure_name)
               echo $segment->departure->iataCode."-".$departure_name->name." ".$departure_name->cityName.  "--->";
               if($arrival_name){
@@ -417,11 +402,6 @@ $arrival_name = AirPort::findOne(['code'=>$segment->arrival->iataCode]);
               }else{
                 echo "no arrival_name found  on : ".$segment->arrival->iataCode."<br>";
               }
-=======
-              echo $segment->departure->iataCode."-".$departure_name->name." ".$departure_name->cityName.  "--->";
-              echo $segment->arrival->iataCode."-".$arrival_name->name." ".$arrival_name->cityName."(" . $airline . ")";
-
->>>>>>> Stashed changes
               ?>
               <h2><?php ?></h2>
               <?php
@@ -441,13 +421,10 @@ $arrival_name = AirPort::findOne(['code'=>$segment->arrival->iataCode]);
                 ?>
               </a></p>
 
-<<<<<<< Updated upstream
               <p><a class="btn btn-outline-secondary">
                 ORDER NOW
               </a></p>
 
-=======
->>>>>>> Stashed changes
 
           </div>
 

@@ -15,11 +15,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
   <code><?= __FILE__ ?></code>
 </div>
-<?php
+<?php $form = \yii\widgets\ActiveForm::begin(); ?>
 
 
+  <input name="cityCode" placeholder="Enter city iata code" />
+  <input type="submit" />
+  <?php \yii\widgets\ActiveForm::end(); ?>
+  <?php
+  if (isset($_POST['cityCode'])){
 
-$curl = curl_init();
+    $curl = curl_init();
 
 curl_setopt_array($curl, array(
   CURLOPT_URL => 'https://test.api.amadeus.com/v1/security/oauth2/token',
@@ -43,13 +48,14 @@ curl_close($curl);
 
 
 
+
 $result = json_decode($response);
 
 
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-city?cityCode=PAR&radius=5&radiusUnit=KM&hotelSource=ALL',
+  CURLOPT_URL => 'https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-city?cityCode='.$_POST['cityCode'].'&radius=5&radiusUnit=KM&hotelSource=ALL',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
@@ -97,5 +103,5 @@ foreach ($php_result->data as $hotel) {
     
   echo "<hr>";
 }
-
+  }
 
