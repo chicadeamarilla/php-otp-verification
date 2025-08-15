@@ -145,6 +145,10 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+    public function actionHotel()
+    {
+        return $this->render('hotel');
+    }
 
     /**
      * Signs user up.
