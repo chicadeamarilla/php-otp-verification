@@ -115,6 +115,7 @@ if (isset($_POST['hotelName'])){
     if($all_hotels){
         foreach ($all_hotels as $h){
             echo $h->name;
+            echo "<br>";
         }
     }
 }
