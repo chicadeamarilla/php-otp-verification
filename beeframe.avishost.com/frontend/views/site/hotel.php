@@ -1,12 +1,20 @@
-
 <?php
 
-
+/** @var yii\web\View $this */
 
 use common\models\Hotel;
 use yii\helpers\Html;
 
+$this->title = 'About';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
+<div class="site-about">
+  <h1><?= Html::encode($this->title) ?></h1>
+
+  <p>This is the About page. You may modify the following file to customize its content:</p>
+
+  <code><?= __FILE__ ?></code>
+</div>
 <?php $form = \yii\widgets\ActiveForm::begin(); ?>
 
 
@@ -96,3 +104,17 @@ foreach ($php_result->data as $hotel) {
   echo "<hr>";
 }
   }
+
+<?php $form = \yii\widgets\ActiveForm::begin(); ?>
+    <input name="hotelName" placeholder="search from database" />
+    <input type="submit" /> 
+<?php \yii\widgets\ActiveForm::end(); ?>
+<?php
+if (isset($_POST['hotelName']){
+    $searchName = $_POST['hotelName'];
+$all_hotels = hotel::find()->where(['like','name',$searchName])->all();
+if($all_hotels){
+foreach ($all_hotels as $h){
+echo h->name }
+}
+}?>
