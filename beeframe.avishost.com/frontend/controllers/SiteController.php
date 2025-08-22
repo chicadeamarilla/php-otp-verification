@@ -77,7 +77,11 @@ class SiteController extends Controller
     {
         return $this->render('index');
     }
+    public function actionSaveAjax()
+    {
+      return json_encode(['save'=> true]);
 
+    }
     /**
      * Logs in a user.
      *
