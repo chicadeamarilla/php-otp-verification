@@ -15,42 +15,61 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use yii\filters\Cors;
 
 /**
  * Site controller
  */
 class SiteController extends Controller
 {
+    public $enableCsrfValidation = false;
     /**
      * {@inheritdoc}
      */
     public function behaviors()
-    {
-        return [
-            'access' => [
-                'class' => AccessControl::class,
-                'only' => ['logout', 'signup'],
-                'rules' => [
-                    [
-                        'actions' => ['signup'],
-                        'allow' => true,
-                        'roles' => ['?'],
-                    ],
-                    [
-                        'actions' => ['logout'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
+{
+    $behaviors = parent::behaviors() ?? [];
+
+    // Add AccessControl
+    $behaviors['access'] = [
+        'class' => AccessControl::class,
+        'only' => ['logout', 'signup'],
+        'rules' => [
+            [
+                'actions' => ['signup'],
+                'allow' => true,
+                'roles' => ['?'],
             ],
-            'verbs' => [
-                'class' => VerbFilter::class,
-                'actions' => [
-                    'logout' => ['post'],
-                ],
+            [
+                'actions' => ['logout'],
+                'allow' => true,
+                'roles' => ['@'],
             ],
-        ];
-    }
+        ],
+    ];
+
+    // Add VerbFilter
+    $behaviors['verbs'] = [
+        'class' => VerbFilter::class,
+        'actions' => [
+            'logout' => ['post'],
+        ],
+    ];
+
+    // ✅ Add CORS filter
+    $behaviors['corsFilter'] = [
+        'class' => Cors::class,
+        'cors' => [
+            'Origin' => ['https://bee.avishost.com'], // 👈 allowed domain
+            'Access-Control-Request-Method' => ['GET', 'PUT','POST', 'PATCH', 'DELETE', 'OPTIONS'],
+            'Access-Control-Allow-Credentials' => true,
+            'Access-Control-Request-Headers' => ['*'],
+            'Access-Control-Max-Age' => 3600,
+        ],
+    ];
+
+    return $behaviors;
+}
 
     /**
      * {@inheritdoc}
@@ -79,6 +98,10 @@ class SiteController extends Controller
     }
     public function actionSaveAjax()
     {
+
+
+      $EMAIL =  $_POST['user_email']  ;
+
       return json_encode(['save'=> true]);
 
     }
