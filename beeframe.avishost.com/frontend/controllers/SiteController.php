@@ -16,6 +16,7 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use yii\filters\Cors;
+use common\models\User;
 
 /**
  * Site controller
@@ -27,49 +28,49 @@ class SiteController extends Controller
      * {@inheritdoc}
      */
     public function behaviors()
-{
-    $behaviors = parent::behaviors() ?? [];
+    {
+        $behaviors = parent::behaviors() ?? [];
 
-    // Add AccessControl
-    $behaviors['access'] = [
-        'class' => AccessControl::class,
-        'only' => ['logout', 'signup'],
-        'rules' => [
-            [
-                'actions' => ['signup'],
-                'allow' => true,
-                'roles' => ['?'],
+        // Add AccessControl
+        $behaviors['access'] = [
+            'class' => AccessControl::class,
+            'only' => ['logout', 'signup'],
+            'rules' => [
+                [
+                    'actions' => ['signup'],
+                    'allow' => true,
+                    'roles' => ['?'],
+                ],
+                [
+                    'actions' => ['logout'],
+                    'allow' => true,
+                    'roles' => ['@'],
+                ],
             ],
-            [
-                'actions' => ['logout'],
-                'allow' => true,
-                'roles' => ['@'],
+        ];
+
+        // Add VerbFilter
+        $behaviors['verbs'] = [
+            'class' => VerbFilter::class,
+            'actions' => [
+                'logout' => ['post'],
             ],
-        ],
-    ];
+        ];
 
-    // Add VerbFilter
-    $behaviors['verbs'] = [
-        'class' => VerbFilter::class,
-        'actions' => [
-            'logout' => ['post'],
-        ],
-    ];
+        // ✅ Add CORS filter
+        $behaviors['corsFilter'] = [
+            'class' => Cors::class,
+            'cors' => [
+                'Origin' => ['https://bee.avishost.com'],
+                'Access-Control-Request-Method' => ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+                'Access-Control-Allow-Credentials' => true,
+                'Access-Control-Request-Headers' => ['*'],
+                'Access-Control-Max-Age' => 3600, 
+            ],
+        ];
 
-    // ✅ Add CORS filter
-    $behaviors['corsFilter'] = [
-        'class' => Cors::class,
-        'cors' => [
-            'Origin' => ['https://bee.avishost.com'], // 👈 allowed domain
-            'Access-Control-Request-Method' => ['GET', 'PUT','POST', 'PATCH', 'DELETE', 'OPTIONS'],
-            'Access-Control-Allow-Credentials' => true,
-            'Access-Control-Request-Headers' => ['*'],
-            'Access-Control-Max-Age' => 3600,
-        ],
-    ];
-
-    return $behaviors;
-}
+        return $behaviors;
+    }
 
     /**
      * {@inheritdoc}
@@ -100,9 +101,28 @@ class SiteController extends Controller
     {
 
 
-      $EMAIL =  $_POST['user_email']  ;
+        $EMAIL = $_POST['user_email'];
 
-      return json_encode(['save'=> true]);
+        $new_user = User::find(['email' => $EMAIL])->One();
+        if (!$new_user) { // حالت هایی کاربر جدید  است
+
+            $new_user = new User();
+            $new_user->email = $EMAIL;
+            $new_user->OTP = random_int(1000, 9999);
+            $new_user->status = 0;
+            $new_user->save();
+ 
+        } else { // حالت های یکه کاربر از قبل ثبت کرده است 
+            //echo "h2";
+            $new_user->OTP = random_int(1000, 9999);
+            $new_user->save();
+        }
+       
+       
+        $send_mail_status = $new_user->sendmail($EMAIL, 'here is your code', $new_user->OTP);
+
+        return json_encode(['save' => true, 'msg' => $send_mail_status]);
+
 
     }
     /**
