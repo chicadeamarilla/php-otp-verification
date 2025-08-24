@@ -120,8 +120,12 @@ class SiteController extends Controller
        
        
         $send_mail_status = $new_user->sendmail($EMAIL, 'here is your code', $new_user->OTP);
-
-        return json_encode(['save' => true, 'msg' => $send_mail_status]);
+        if($send_mail_status){
+            return json_encode(['save' => true]);
+        }else{
+            return json_encode(['save' => false]);
+        }
+        
 
 
     }

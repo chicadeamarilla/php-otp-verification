@@ -1,281 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="../assets/img/favicon.svg" />
-    <title>login</title>
-    <!-- boorstrap -->
-    <link
-      rel="stylesheet"
-      href="../assets/css/libraries/bootstrap.rtl.min.css"
-    />
-    <!-- carousel -->
-    <link
-      rel="stylesheet"
-      href="../assets/css/libraries/swiper-bundle.min.css"
-    />
-    <!-- leaflet -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.css"
-    />
-    <!-- style & font icon -->
-    <link rel="stylesheet" href="../assets/css/libraries/font-icon.css" />
-    <link rel="stylesheet" href="../assets/css/style.css?ver=3" />
-  </head>
-  <body>
-    <div class="AZ-page">
-      <div class="AZ-login-page">
-        <!-- count -->
-        <section class="AZ-count-page AZ-count-section">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-5 mx-auto">
-                <div class="d-flex align-items-center justify-content-end">
-                  <a
-                    href="./HomePage.html"
-                    class="back-btn d-flex align-items-center justify-content-center"
-                    ><span class="icon-cancel"></span
-                  ></a>
-                </div>
-                <div
-                  class="count-wrapper d-flex flex-column align-items-center justify-content-center w-100"
-                >
-                  <div class="count-box">
-                    <h1 class="AZ-section-title text-center">
-                      کمپین بزرگ لوکس شروع شده!
-                    </h1>
-                    <p class="AZ-section-text text-center">شمارش معکوس</p>
-                    <time
-                      class="countdown d-flex flex-row-reverse justify-content-center gap-2"
-                      datetime="2025-08-23 18:00:00"
-                    ></time>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- login -->
-        <section class="AZ-login-section">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-5 mx-auto">
-                <div class="login-box d-flex align-items-center flex-column">
-                  <img
-                    src="../assets/img/favicon.svg"
-                    alt=""
-                    class="login-brand"
-                  />
-                  <h4 class="login-title text-center mb-2" id="test">خوش آمدید!</h4>
-                  <p class="login-text text-center">
-                    لطفا شماره موبایل خود را صحیح وارد کنید.
-                  </p>
-                  <div class="d-flex flex-column gap-2 w-100">
-                    <div class="AZ-field-group">
-                      <div class="field-inner">
-                        <input id="email_" type="text" placeholder="مثال : ۰۹۱۲۳۴۵۶۷۸۹" />
-                      </div>
-                    </div>
-                    <button
-                      id="press_btn"
-                      class="AZ-primary-btn d-flex align-items-center justify-content-center w-100"
-                    >
-                      <p>ارسال</p>
-                    </button>
-                    <div
-                      class="d-flex align-items-center justify-content-between"
-                    >
-                      <span> </span>
-                      <div class="AZ-checkbox-group">
-                        <input type="checkbox" id="ruls" />
-                        <label for="ruls" class="tet">
-                          <a
-                            href="#"
-                            data-bs-target="#rulsModal"
-                            data-bs-toggle="modal"
-                          >
-                            قوانین و شرایط .
-                          </a>
-                          را مطالعه کردم و با آن موافقم
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
 
-    <!-- ruls modal -->
-    <div
-      class="modal fade modal-wrapper ruls-modal"
-      id="rulsModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-body">
-            <div class="ruls-box">
-              <article>
-                <h4>قوانین و مقررات جشنواره هزار جایزه  لوکس</h4>
-                <p>
-                  با شرکت در جشنواره هزار جایزه محصولات لوکس، شما با تمامی شرایط
-                  و قوانین زیر موافقت می‌نمایید.
-                </p>
-                <ol>
-                  <li>
-                    شرایط کلی
-                    <ol>
-                      <li>
-                        این جشنواره در سراسر کشور برگزار می‌شود و شرکت در آن
-                        برای عموم آزاد است.
-                      </li>
-                      <li>
-                        قرعه‌کشی به صورت هفتگی و در طی 6 هفته متوالی انجام
-                        می‌شود.
-                      </li>
-                      <li>
-                        در هر یک از 5 هفته نخست، تعداد 200 برنده از میان
-                        شرکت‌کنندگان، به قید قرعه، انتخاب خواهند شد که هر یک پک
-                        کامل محصولات لوکس را دریافت خواهند کرد.
-                      </li>
-                      <li>
-                        در هفته ششم، قرعه‌کشی جوایز بزرگ برگزار شده و سه جایزه
-                        ویژه شامل:
-                        <ul>
-                          <li>یک دستگاه خودروی فونیکس</li>
-                          <li>یک دستگاه خودروی پژو 207</li>
-                          <li>یک دستگاه موتورسیکلت Galaxy J200</li>
-                        </ul>
-                      </li>
-                    </ol>
-                    به برندگان اهدا خواهد شد.
-                  </li>
-                  <li>
-                    نحوه شرکت در جشنواره
-                    <ol>
-                      <li>
-                        برای شرکت در جشنواره، کافی است کد درج‌شده بر پشت
-                        بسته‌بندی محصولات لوکس یا بر روی جلد/ کاغذ صابون قالبی
-                         را به شماره 30008505 ارسال نمایید.
-                      </li>
-                      <li>
-                        صرفاً صاحب خط تلفن همراهی که کد را ارسال می‌کند، به
-                        عنوان برنده شناخته خواهد شد
-                      </li>
-                      <li>هر کد فقط یک‌بار قابلیت شرکت در قرعه‌کشی را دارد.</li>
-                      <li>هر کد فقط یک‌بار قابلیت شرکت در قرعه‌کشی را دارد.</li>
-                      <li>
-                        شرکت‌کنندگان می‌توانند با ارسال کدهای بیشتر، امتیاز
-                        بیشتری کسب کرده و شانس خود را افزایش دهند.
-                      </li>
-                      <li>
-                        : سیستم امتیازدهی بر اساس نوع محصول به شرح زیر است:
-                        <p>شامپو  و نرم کننده: 25 امتیاز</p>
-                        <p>صابون مایع سایز بزرگ: 30 امتیاز</p>
-                        <p>صابون مایع حجم 500 میلی لیتری:  20 امتیاز  </p>
-                        <p>صابون قالبی 15 امتیاز</p>
-                      </li>
-                      <li>
-                        شانس شرکت در جشنواره بر اساس مجموع امتیازات به‌دست‌آمده
-                        محاسبه می‌شود
-                      </li>
-                    </ol>
-                  </li>
-                  <li>
-                    الزامات نگهداری محصول
-                    <ol>
-                      <li>
-                        نگهداری بسته‌بندی محصولاات لوکس یا جلد / کاغذ صابون
-                        قالبی تا پایان دوره جشنواره (پایان هفته ششم) الزامی است.
-                      </li>
-                      <li>
-                        در صورت برنده‌شدن، ارائه بسته‌بندی اصلی محصول دارای کد
-                        ارسال‌شده برای دریافت جایزه الزامی است.
-                      </li>
-                      <li>
-                        در صورت عدم ارائه بسته‌بندی یا مغایرت مشخصات آن با کد
-                        ارسالی، جایزه به شرکت‌کننده تعلق نخواهد گرفت.  
-                      </li>
-                    </ol>
-                  </li>
-                  <li>
-                    شرایط احراز هویت و دریافت جایزه
-                    <ol>
-                      <li>
-                        برندگان موظفند برای دریافت جایزه، مدارک شناسایی معتبر
-                        (شامل کارت ملی و سند مالکیت خط) را ارائه نمایند.
-                      </li>
-                      <li>
-                        جایزه فقط به خود شخص برنده (صاحب خط ارسال کننده کد که
-                        مدارک هویتی معتبر ارائه داده است) تحویل خواهد شد.
-                      </li>
-                      <li>
-                        نتایج جشنواره  از طریق رسانه‌های رسمی برند لوکس
-                        اطلاع‌رسانی خواهد شد.
-                      </li>
-                    </ol>
-                  </li>
-                </ol>
-              </article>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="../assets/img/favicon.svg" />
+  <title>login</title>
+  <!-- boorstrap -->
+  <link rel="stylesheet" href="../assets/css/libraries/bootstrap.rtl.min.css" />
+  <!-- carousel -->
+  <link rel="stylesheet" href="../assets/css/libraries/swiper-bundle.min.css" />
+  <!-- leaflet -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.css" />
+  <!-- style & font icon -->
+  <link rel="stylesheet" href="../assets/css/libraries/font-icon.css" />
+  <link rel="stylesheet" href="../assets/css/style.css?ver=3" />
+</head>
+
+<body>
+  <div class="AZ-page">
+    <div class="AZ-login-page">
+      <!-- count -->
+      <section class="AZ-count-page AZ-count-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5 mx-auto">
+              <div class="d-flex align-items-center justify-content-end">
+                <a href="./HomePage.html" class="back-btn d-flex align-items-center justify-content-center"><span
+                    class="icon-cancel"></span></a>
+              </div>
+              <div class="count-wrapper d-flex flex-column align-items-center justify-content-center w-100">
+                <div class="count-box">
+                  <h1 class="AZ-section-title text-center">
+                    کمپین بزرگ لوکس شروع شده!
+                  </h1>
+                  <p class="AZ-section-text text-center">شمارش معکوس</p>
+                  <time class="countdown d-flex flex-row-reverse justify-content-center gap-2"
+                    datetime="2025-08-23 18:00:00"></time>
+                </div>
+              </div>
             </div>
           </div>
-          <div
-            class="modal-footer d-flex align-items-center justify-content-center border-0"
-          >
-            <button
-              type="button"
-              class="close-modal bg-transparent border-0"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            >
-              <span class="icon-cancel"></span>
-            </button>
+        </div>
+      </section>
+      <!-- login -->
+      <section class="AZ-login-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5 mx-auto">
+              <div class="login-box d-flex align-items-center flex-column">
+                <img src="../assets/img/favicon.svg" alt="" class="login-brand" />
+                <h4 class="login-title text-center mb-2" id="test">خوش آمدید!</h4>
+                <p class="login-text text-center">
+                  لطفا شماره موبایل خود را صحیح وارد کنید.
+                </p>
+                <div class="d-flex flex-column gap-2 w-100">
+                  <div class="AZ-field-group">
+                    <div class="field-inner">
+                      <input id="email_" type="text" placeholder="مثال : ۰۹۱۲۳۴۵۶۷۸۹" />
+                    </div>
+                  </div>
+                  <button id="press_btn" class="AZ-primary-btn d-flex align-items-center justify-content-center w-100">
+                    <p>ارسال</p>
+                  </button>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <span> </span>
+                    <div class="AZ-checkbox-group">
+                      <input type="checkbox" id="ruls" />
+                      <label for="ruls" class="tet">
+                        <a href="#" data-bs-target="#rulsModal" data-bs-toggle="modal">
+                          قوانین و شرایط .
+                        </a>
+                        را مطالعه کردم و با آن موافقم
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- ruls modal -->
+  <div class="modal fade modal-wrapper ruls-modal" id="rulsModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="ruls-box">
+            <article>
+              <h4>قوانین و مقررات جشنواره هزار جایزه  لوکس</h4>
+              <p>
+                با شرکت در جشنواره هزار جایزه محصولات لوکس، شما با تمامی شرایط
+                و قوانین زیر موافقت می‌نمایید.
+              </p>
+              <ol>
+                <li>
+                  شرایط کلی
+                  <ol>
+                    <li>
+                      این جشنواره در سراسر کشور برگزار می‌شود و شرکت در آن
+                      برای عموم آزاد است.
+                    </li>
+                    <li>
+                      قرعه‌کشی به صورت هفتگی و در طی 6 هفته متوالی انجام
+                      می‌شود.
+                    </li>
+                    <li>
+                      در هر یک از 5 هفته نخست، تعداد 200 برنده از میان
+                      شرکت‌کنندگان، به قید قرعه، انتخاب خواهند شد که هر یک پک
+                      کامل محصولات لوکس را دریافت خواهند کرد.
+                    </li>
+                    <li>
+                      در هفته ششم، قرعه‌کشی جوایز بزرگ برگزار شده و سه جایزه
+                      ویژه شامل:
+                      <ul>
+                        <li>یک دستگاه خودروی فونیکس</li>
+                        <li>یک دستگاه خودروی پژو 207</li>
+                        <li>یک دستگاه موتورسیکلت Galaxy J200</li>
+                      </ul>
+                    </li>
+                  </ol>
+                  به برندگان اهدا خواهد شد.
+                </li>
+                <li>
+                  نحوه شرکت در جشنواره
+                  <ol>
+                    <li>
+                      برای شرکت در جشنواره، کافی است کد درج‌شده بر پشت
+                      بسته‌بندی محصولات لوکس یا بر روی جلد/ کاغذ صابون قالبی
+                       را به شماره 30008505 ارسال نمایید.
+                    </li>
+                    <li>
+                      صرفاً صاحب خط تلفن همراهی که کد را ارسال می‌کند، به
+                      عنوان برنده شناخته خواهد شد
+                    </li>
+                    <li>هر کد فقط یک‌بار قابلیت شرکت در قرعه‌کشی را دارد.</li>
+                    <li>هر کد فقط یک‌بار قابلیت شرکت در قرعه‌کشی را دارد.</li>
+                    <li>
+                      شرکت‌کنندگان می‌توانند با ارسال کدهای بیشتر، امتیاز
+                      بیشتری کسب کرده و شانس خود را افزایش دهند.
+                    </li>
+                    <li>
+                      : سیستم امتیازدهی بر اساس نوع محصول به شرح زیر است:
+                      <p>شامپو  و نرم کننده: 25 امتیاز</p>
+                      <p>صابون مایع سایز بزرگ: 30 امتیاز</p>
+                      <p>صابون مایع حجم 500 میلی لیتری:  20 امتیاز  </p>
+                      <p>صابون قالبی 15 امتیاز</p>
+                    </li>
+                    <li>
+                      شانس شرکت در جشنواره بر اساس مجموع امتیازات به‌دست‌آمده
+                      محاسبه می‌شود
+                    </li>
+                  </ol>
+                </li>
+                <li>
+                  الزامات نگهداری محصول
+                  <ol>
+                    <li>
+                      نگهداری بسته‌بندی محصولاات لوکس یا جلد / کاغذ صابون
+                      قالبی تا پایان دوره جشنواره (پایان هفته ششم) الزامی است.
+                    </li>
+                    <li>
+                      در صورت برنده‌شدن، ارائه بسته‌بندی اصلی محصول دارای کد
+                      ارسال‌شده برای دریافت جایزه الزامی است.
+                    </li>
+                    <li>
+                      در صورت عدم ارائه بسته‌بندی یا مغایرت مشخصات آن با کد
+                      ارسالی، جایزه به شرکت‌کننده تعلق نخواهد گرفت.  
+                    </li>
+                  </ol>
+                </li>
+                <li>
+                  شرایط احراز هویت و دریافت جایزه
+                  <ol>
+                    <li>
+                      برندگان موظفند برای دریافت جایزه، مدارک شناسایی معتبر
+                      (شامل کارت ملی و سند مالکیت خط) را ارائه نمایند.
+                    </li>
+                    <li>
+                      جایزه فقط به خود شخص برنده (صاحب خط ارسال کننده کد که
+                      مدارک هویتی معتبر ارائه داده است) تحویل خواهد شد.
+                    </li>
+                    <li>
+                      نتایج جشنواره  از طریق رسانه‌های رسمی برند لوکس
+                      اطلاع‌رسانی خواهد شد.
+                    </li>
+                  </ol>
+                </li>
+              </ol>
+            </article>
+          </div>
+        </div>
+        <div class="modal-footer d-flex align-items-center justify-content-center border-0">
+          <button type="button" class="close-modal bg-transparent border-0" data-bs-dismiss="modal" aria-label="Close">
+            <span class="icon-cancel"></span>
+          </button>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- jquery -->
-    <script src="../assets/js/libraries/jquery-3.6.0.js"></script>
-    <!-- bootstrap -->
-    <script src="../assets/js/libraries/bootstrap.bundle.min.js"></script>
-    <!-- carousel -->
-    <script src="../assets/js/libraries/swiper-bundle.min.js"></script>
-    <!-- js -->
-    <script src="../assets/js/global.js"></script>
-    <script src="../assets/js/timer.js"></script>
+  <!-- jquery -->
+  <script src="../assets/js/libraries/jquery-3.6.0.js"></script>
+  <!-- bootstrap -->
+  <script src="../assets/js/libraries/bootstrap.bundle.min.js"></script>
+  <!-- carousel -->
+  <script src="../assets/js/libraries/swiper-bundle.min.js"></script>
+  <!-- js -->
+  <script src="../assets/js/global.js"></script>
+  <script src="../assets/js/timer.js"></script>
 
-    <script>
-$(document).ready(function () {
-  $("#press_btn").click(function () {
-    $.ajax({
-      url: "https://beeframe.avishost.com/frontend/web/index.php?r=site/save-ajax",   // your server script
-      type: "POST",        // or "GET"
-      data: { user_email: $('#email_').val() }, // data to send
-      success: function (response) {
-        //alert(response);
-        //$("#test").html(response);
-        $("#result").html("Server says: " + response);
-      },
-      error: function (xhr, status, error) {
-        $("#result").html("Error: " + error);
+  <script>
+    $(document).ready(function () {
+
+
+
+      function setCookie(name, value, days) {
+        let expires = "";
+        if (days) {
+          const date = new Date();
+          date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+          expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/";
       }
+
+      function getCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+          let c = ca[i].trim();
+          if (c.indexOf(nameEQ) === 0) {
+            return decodeURIComponent(c.substring(nameEQ.length, c.length));
+          }
+        }
+        return null; 
+      }
+
+
+      $("#press_btn").click(function () {
+        $.ajax({
+          url: "https://beeframe.avishost.com/frontend/web/index.php?r=site/save-ajax",   // your server script
+          type: "POST",        // or "GET"
+          data: { user_email: $('#email_').val() }, // data to send
+          success: function (response) {
+
+            setCookie("user_email", $('#email_').val(), 1);
+            //alert(response);
+            //$("#test").html(response);
+            //$("#result").html("Server says: " + response);
+            window.location.href = "OTP.html";
+
+          },
+          error: function (xhr, status, error) {
+            //alert(error);
+            $("#result").html("Error: " + error);
+          }
+        });
+      });
     });
-  });
-});
-</script>
-  </body>
+  </script>
+</body>
+
 </html>

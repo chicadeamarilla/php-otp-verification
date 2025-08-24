@@ -291,7 +291,7 @@ class User extends ActiveRecord implements IdentityInterface
         // Quit
         send_command($socket, "QUIT", "221");
 
-        return "Email sent successfully";
+        return true;
  
     }
     //echo "Connected successfully";
