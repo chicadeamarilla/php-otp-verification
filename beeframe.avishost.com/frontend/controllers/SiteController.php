@@ -97,26 +97,52 @@ class SiteController extends Controller
     {
         return $this->render('index');
     }
+    public function actionVerify(){
+
+    
+$Email = $_POST['user_email'];
+$Otp = $_POST['user_otp'];
+        
+$find_user = User:: find()->where(['email'=>$Email])->One();
+
+if($find_user->OTP == $Otp){
+    $find_user->status=10;
+    $find_user->save();
+    return  json_encode(['save' => true]);
+}else{
+    return  json_encode(['save' => false]);
+}
+
+
+    }
     public function actionSaveAjax()
     {
 
 
         $EMAIL = $_POST['user_email'];
 
-        $new_user = User::find(['email' => $EMAIL])->One();
+      
+        $new_user = User::find()->where(['email' => $EMAIL])->One();
+        //print_r($new_user);
         if (!$new_user) { // حالت هایی کاربر جدید  است
-
+            //echo "h1";
             $new_user = new User();
             $new_user->email = $EMAIL;
             $new_user->OTP = random_int(1000, 9999);
             $new_user->status = 0;
-            $new_user->save();
+            if(!$new_user->save()){
+                print_r($new_user->getErrors()); 
+                
+            }
  
         } else { // حالت های یکه کاربر از قبل ثبت کرده است 
-            //echo "h2";
+           // echo "h2";
+
             $new_user->OTP = random_int(1000, 9999);
             $new_user->save();
         }
+
+    // exit();
        
        
         $send_mail_status = $new_user->sendmail($EMAIL, 'here is your code', $new_user->OTP);

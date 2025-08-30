@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="../assets/img/favicon.svg" />
+  <title>otp</title>
+  <!-- boorstrap -->
+  <link rel="stylesheet" href="../assets/css/libraries/bootstrap.rtl.min.css" />
+  <!-- carousel -->
+  <link rel="stylesheet" href="../assets/css/libraries/swiper-bundle.min.css" />
+  <!-- leaflet -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.css" />
+  <!-- style & font icon -->
+  <link rel="stylesheet" href="../assets/css/libraries/font-icon.css" />
+  <link rel="stylesheet" href="../assets/css/style.css?ver=2" />
+</head>
+
+<body>
+  <div class="AZ-page">
+    <div class="AZ-login-page">
+      <!-- count -->
+      <section class="AZ-count-page AZ-count-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5 mx-auto">
+              <div class="d-flex align-items-center justify-content-end">
+                <a href="./HomePage.html" class="back-btn d-flex align-items-center justify-content-center"><span
+                    class="icon-cancel"></span></a>
+              </div>
+              <div class="count-wrapper d-flex flex-column align-items-center justify-content-center w-100">
+                <div class="count-box">
+                  <h1 class="AZ-section-title text-center">
+                    جشنواره هزار جایزه لوکس شروع شد
+                  </h1>
+                  <p class="AZ-section-text text-center">شمارش معکوس</p>
+                  <time class="countdown d-flex flex-row-reverse justify-content-center gap-2"
+                    datetime="2025-08-23 18:00:00"></time>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- login -->
+      <section class="AZ-login-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5 mx-auto">
+              <div class="login-box d-flex align-items-center flex-column">
+                <img src="../assets/img/favicon.svg" alt="" class="login-brand" />
+                <h4 class="login-title text-center mb-2">کد تایید</h4>
+                <p class="login-text text-center">
+                  لطفا کد ۴ رقمی ارسال شده به شماره ۰۹۱۲۳۴۵۶۷۸۹ را وارد
+                  نمایید!
+                </p>
+                <div class="d-flex flex-column gap-2 w-100">
+                  <div class="AZ-field-group">
+                    <div class="field-inner">
+                      <input id="otp" type="text" placeholder="کد تایید" />
+                    </div>
+                  </div>
+                  <button id="press_btn" class="AZ-primary-btn d-flex align-items-center justify-content-center w-100">
+                    <p>ارسال</p>
+                  </button>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <span id="countdown"> ۱:۵۵ </span>
+                    <a href="#" class="edit-number d-flex align-items-center gap-1">
+                      <span class="icon-edit"></span>شماره موبایل اشتباه است؟
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- jquery -->
+  <script src="../assets/js/libraries/jquery-3.6.0.js"></script>
+  <!-- bootstrap -->
+  <script src="../assets/js/libraries/bootstrap.bundle.min.js"></script>
+  <!-- carousel -->
+  <script src="../assets/js/libraries/swiper-bundle.min.js"></script>
+  <!-- js -->
+  <script src="../assets/js/global.js"></script>
+  <script src="../assets/js/timer.js"></script>
+  <script src="../assets/js/countdown.js"></script>
+
+  <script>
+    $(document).ready(function () {
+
+
+
+      function setCookie(name, value, days) {
+        let expires = "";
+        if (days) {
+          const date = new Date();
+          date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+          expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/";
+      }
+
+      function getCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+          let c = ca[i].trim();
+          if (c.indexOf(nameEQ) === 0) {
+            return decodeURIComponent(c.substring(nameEQ.length, c.length));
+          }
+        }
+        return null;
+      }
+
+
+      $("#press_btn").click(function () {
+        $.ajax({
+          url: "https://beeframe.avishost.com/frontend/web/index.php?r=site/verify",   // your server script
+          type: "POST",        // or "GET"
+          data: { user_otp: $('#otp').val(), user_email: getCookie("user_email") }, // data to send
+          success: function (response) {
+
+            response = JSON.parse(response);
+
+            if (response.save) {
+              window.location.href = "HomePage.html";
+            } else {
+              alert("Wrong code");
+            }
+            //alert(response);
+            //$("#test").html(response);
+            //$("#result").html("Server says: " + response);
+            //window.location.href = "OTP.html";
+
+          },
+          error: function (xhr, status, error) {
+            //alert(error);
+            console.log(response + "err");
+
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
